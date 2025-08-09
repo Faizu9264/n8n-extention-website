@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# N8N Extension Website
 
-## Getting Started
+A modern, responsive single-page application built with Next.js for introducing and selling our N8N extension. This website serves as the main landing page for users to learn about the extension features, view pricing, and make purchases.
 
-First, run the development server:
+## 🚀 Features
 
+- **Modern Design**: Clean, professional UI with smooth animations
+- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
+- **Single Page Application**: All content accessible from one page with smooth scrolling
+- **Interactive Pricing**: Toggle between monthly and yearly billing
+- **Performance Optimized**: Built with Next.js for fast loading times
+- **Extension Integration Ready**: Designed to work seamlessly with browser extensions
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14+ with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **UI Components**: Headless UI
+
+## 📦 Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Quick Start
 
-## Learn More
+```bash
+npm run dev     # Start development server
+npm run build   # Build for production
+npm start       # Start production server
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔗 Extension Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This website is designed to work seamlessly with browser extensions:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Local Development**: Run the website locally on `http://localhost:3000`
+2. **Extension Communication**: Ready for message passing and data sharing
+3. **Deep Linking**: Supports URL parameters for direct navigation
 
-## Deploy on Vercel
+Example extension integration:
+```javascript
+// In your extension
+chrome.tabs.create({
+  url: 'http://localhost:3000?source=extension&user=' + userId
+});
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ for the N8N community
