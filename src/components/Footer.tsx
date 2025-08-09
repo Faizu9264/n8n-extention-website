@@ -4,10 +4,6 @@ import { motion } from 'framer-motion'
 import { Mail, Heart } from 'lucide-react'
 
 export default function Footer() {
-  const handleEmailClick = (subject: string) => {
-    window.location.href = `mailto:codecodersofficial@gmail.com?subject=${encodeURIComponent(subject)}`
-  }
-
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +59,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
             <div className="flex items-center mb-4 md:mb-0">
-              <span>© 2025 N8N AI Assistant. All rights reserved.</span>
+              <span>© 2025 CodeCoders. All rights reserved.</span>
             </div>
             <div className="flex items-center">
               <span>Made with</span>
