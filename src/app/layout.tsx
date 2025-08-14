@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "N8N AI Workflow Generator - Chrome Extension",
     description: "Generate complex N8N workflows with simple AI prompts. Our Chrome extension brings AI-powered automation directly to your N8N workspace.",
     type: "website",
-    url: "https://n8n-ai-extension.com",
+    url: "https://snapwebz.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -40,6 +40,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Top-right header bar */}
+  {/* No top-right header bar here; moved to homepage only */}
         {children}
       </body>
     </html>

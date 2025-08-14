@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import SupportChatButtons from "../components/SupportChatButtons";
+import { useRef } from "react";
 import FaqSection from "../components/FaqSection";
 
 export default function Home() {
@@ -20,8 +21,38 @@ export default function Home() {
     },
   };
 
+  const faqRef = useRef<HTMLDivElement>(null);
+
+  const scrollToFaq = (e: React.MouseEvent) => {
+    e.preventDefault();
+    faqRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
+      {/* FAQ Icon only on Home */}
+      <div className="fixed top-6 right-8 z-50 flex gap-4 items-center">
+        {/* Buy Me a Coffee Button */}
+        <a
+          href="https://buymeacoffee.com/faizurahman"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold shadow-lg transition-all text-base"
+          style={{ boxShadow: "0 2px 8px rgba(255, 193, 7, 0.18)" }}
+          title="Support us on Buy Me a Coffee"
+        >
+          <span role="img" aria-label="coffee">☕</span> Buy Me a Coffee
+        </a>
+        {/* FAQ Icon Button */}
+        <a
+          href="#faq"
+          onClick={scrollToFaq}
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-all text-2xl"
+          title="Go to FAQ"
+        >
+          <span role="img" aria-label="FAQ">❓</span>
+        </a>
+      </div>
       {/* Hero Section */}
       <header className="py-24 px-4 text-center relative overflow-hidden">
         {/* Background animation */}
@@ -323,7 +354,7 @@ export default function Home() {
             className="text-5xl font-bold mb-8 text-gray-800"
           >
             ❤️ Support Our Work{" "}
-            <span className="text-gray-500">(Optional)</span>
+            {/* <span className="text-gray-500">(Optional)</span> */}
           </motion.h2>
 
           <motion.p
@@ -473,7 +504,9 @@ export default function Home() {
         </div>
       </section>
 
-  <FaqSection />
+      <div ref={faqRef} id="faq">
+        <FaqSection />
+      </div>
   <Footer />
       <SupportChatButtons />
     </main>
