@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
+import FaqSection from "../components/FaqSection";
 
 export default function Home() {
   const fadeInUp = {
@@ -471,7 +472,8 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+  <FaqSection />
+  <Footer />
     </main>
   );
 }
