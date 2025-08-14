@@ -32,16 +32,32 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
       {/* FAQ Icon only on Home */}
       <div className="fixed top-6 right-8 z-50 flex gap-4 items-center">
-        {/* Buy Me a Coffee Button */}
+        {/* Buy Me a Coffee Button with animated text */}
         <a
           href="https://buymeacoffee.com/faizurahman"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold shadow-lg transition-all text-base"
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold shadow-lg transition-all text-base overflow-hidden"
           style={{ boxShadow: "0 2px 8px rgba(255, 193, 7, 0.18)" }}
           title="Support us on Buy Me a Coffee"
         >
-          <span role="img" aria-label="coffee">☕</span> Buy Me a Coffee
+          <video
+            src="/coffee.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-7 h-7 rounded-full object-cover bg-transparent"
+            style={{ background: 'transparent' }}
+          />
+                    <motion.span
+            initial={{ x: 40, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 18 }}
+            className="inline-block"
+          >
+            Buy Me a Coffee
+          </motion.span>
         </a>
         {/* FAQ Icon Button */}
         <a
@@ -63,14 +79,22 @@ export default function Home() {
         </div>
 
         <div className="max-w-5xl mx-auto relative">
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className="text-8xl mb-8"
+            className="mb-8 flex justify-center"
           >
-            🤖
-          </motion.div>
+            <video
+              src="/robot.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-32 h-32 md:w-48 md:h-48 rounded-xl shadow-lg object-contain bg-transparent"
+              style={{ background: 'transparent' }}
+            />
+          </motion.div> */}
 
           <motion.h1
             {...fadeInUp}
@@ -370,11 +394,34 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-10 mb-16">
             {[
               {
-                icon: "☕",
+                icon: (
+                  <video
+                    src="/coffee.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-14 h-14 rounded-full object-cover border border-yellow-400 shadow bg-[#fff8e1]"
+                    style={{ display: 'inline-block', verticalAlign: 'middle' }}
+                  />
+                ),
                 title: "Buy Me a Coffee",
                 description: "Support with a small donation",
                 url: "https://buymeacoffee.com/faizurahman",
-                buttonText: "☕ Buy Me a Coffee",
+                buttonText: (
+                  <>
+                    <video
+                      src="/coffee.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-6 h-6 rounded-full object-cover border border-yellow-400 shadow bg-[#fff8e1] mr-2 inline-block align-middle"
+                      style={{ display: 'inline-block', verticalAlign: 'middle' }}
+                    />
+                    Buy Me a Coffee
+                  </>
+                ),
                 color: "from-yellow-500 to-orange-500",
               },
               {

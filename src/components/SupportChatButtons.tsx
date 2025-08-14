@@ -10,7 +10,10 @@ export default function SupportChatButtons() {
         style={{ boxShadow: "0 4px 16px rgba(37, 99, 235, 0.18)" }}
         title="Email Support"
       >
-        <span role="img" aria-label="Email">✉️</span> Email Support
+        <span role="img" aria-label="Email">
+          ✉️
+        </span>{" "}
+        Email Support
       </a>
       {/* Instagram Button */}
       <a
@@ -21,7 +24,10 @@ export default function SupportChatButtons() {
         style={{ boxShadow: "0 4px 16px rgba(225, 48, 108, 0.18)" }}
         title="DM on Instagram"
       >
-        <span role="img" aria-label="Instagram">📸</span> Instagram DM
+        <span role="img" aria-label="Instagram">
+          📸
+        </span>{" "}
+        Instagram DM
       </a>
     </div>
   );
